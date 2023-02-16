@@ -6,24 +6,22 @@ public class Queue {
     public Queue()
     {
         head = null;
-        //tail = head;
         count = 0;
     }
     public void addToBack(int info)
     {
 
         //head.setsLinkPrev(head);
-        if(count == 0)
+        if(count == 0)// if the count if 0 then create a new head and tail for the queue
         {
-            head = new QueueNode(info , head);//first node in the queue
-            //head.getsLink().setsLink(head);
+            head = new QueueNode(info , head);//This is the first node of the queue
             tail = new QueueNode(head);
-        }//the head will stay still
+        }//the head will stay still because we only will add more to the tail or end
         else
         {
             head = new QueueNode(info , head);
             head.getsLink().setsLink(head);
-        }//the tail will grow
+        }//the tail will grow, by adding numbers to the end of it
         count++;
     }
     public void removeFromFront()
@@ -45,7 +43,7 @@ public class Queue {
         String ans = "";
         if(count == 0)
         {
-            ans = "Empty List!";
+            ans = "Empty List!";//if there is nothing in the list (n=0) then it will tell the user.
         }
         else
         {
@@ -60,7 +58,7 @@ public class Queue {
 
 
         return ans;
-    }//Method will printout the entire current queue list
+    }//This method will print out the entire current queue list, from top to bottom
 
     public int length()
     {
@@ -107,5 +105,5 @@ public class Queue {
         {
             return "data: " + sData + " links to " + sLink;
         }
-    }//end inner class node
-}
+    }//end of private inner class QueueNode
+}// end of public class Queue
